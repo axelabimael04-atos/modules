@@ -7,11 +7,6 @@ class Cart extends CartActions{
   Cart(this.productsOnCart);
 
   @override
-  void removeProductOnCart(int index) {
-    productsOnCart.removeAt(index);
-  }
-
-  @override
   double total() {
     double payment = 0.0;
     for (var i = 0; i < productsOnCart.length; i++) {

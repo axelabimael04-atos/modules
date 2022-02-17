@@ -1,6 +1,9 @@
-class Product {
-  String name;
-  double price;
+import 'package:equatable/equatable.dart';
+
+
+class Product extends Equatable{
+  final String name;
+  final double price;
 
   Product({required this.name, required this.price});
 
@@ -8,5 +11,8 @@ class Product {
     name: json["name"], 
     price: (json["price"] as num).toDouble() 
   );
+
+  @override
+  List get props => [];
 
 }
