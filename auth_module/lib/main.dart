@@ -1,5 +1,5 @@
+import 'package:auth_module/auth/src/auth_page.dart';
 import 'package:auth_module/order/data/cart_provider.dart';
-import 'package:auth_module/order/src/cart_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: CartPage(),
+      home: AuthPage(
+        key: Key('auth-page'),
+      ),
     );
   }
 }
+
+
