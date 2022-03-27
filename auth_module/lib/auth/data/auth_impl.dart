@@ -44,7 +44,7 @@ class AuthImplementation {
 
       user.fold(
         (authException) {
-          print(authException.getDetails().status);
+          print(authException.getDetails().errorCode);
           return showDialog(
             context: context,
             builder: (context) => AlertDialog(

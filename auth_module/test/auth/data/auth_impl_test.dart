@@ -2,17 +2,23 @@
 
 import 'package:auth_module/auth/data/auth_impl.dart';
 import 'package:auth_module/auth/src/auth_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 
 
-main() {
+main() async {
 
   AuthImplementation authImpl = AuthImplementation();
 
   String email = 'axel_aam@hotmail.com';
   String password = '12345678';
+
+  setUpAll(()async{
+    await Firebase.initializeApp();
+    TestWidgetsFlutterBinding.ensureInitialized();
+  });
 
   test('should verify a valid email', () {
 
@@ -32,6 +38,8 @@ main() {
 
   testWidgets('should verify a valid login fields', (tester) async {
     // AuthImplementation authImpl = AuthImplementation();
+
+    
 
     await tester.pumpWidget(MaterialApp(
       home: AuthPage()
